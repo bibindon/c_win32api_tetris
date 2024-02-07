@@ -69,4 +69,3 @@ bool move_down(Mino*);
 
 bool rotate_clockwise(Mino*);
 bool rotate_counterclockwise(Mino*);
-

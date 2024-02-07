@@ -258,7 +258,7 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp)
     static HBITMAP stage_bitmap;
     PAINTSTRUCT paintstruct;
     static HBITMAP hbitmap;
-    static int fall_count_per_second = 2; // 1•b‚É2‰ñ—Ž‰º
+    static int fall_count_per_second = 2; // 2 times fall per second.
     SYSTEMTIME current_time = { 0 };
     static SYSTEMTIME previous_time = { 0 };
     static WORD sum_time = 0;
@@ -418,7 +418,6 @@ int WINAPI WinMain(_In_ HINSTANCE hinstance, _In_opt_ HINSTANCE hprev_instance,
 
     set_client_size(hwnd, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-    DWORD time = 0;
     while (TRUE) {
         if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
             if (msg.message == WM_QUIT) {
